@@ -1,0 +1,78 @@
+{
+  "$defs": {
+    "ValueType": {
+      "enum": [
+        "money",
+        "date",
+        "duration",
+        "quantity",
+        "identifier",
+        "text",
+        "person",
+        "boolean"
+      ],
+      "title": "ValueType",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "A variable of the world that can take values over time: \"unit price of pump P-200\".",
+  "properties": {
+    "id": {
+      "pattern": "^fct-[a-z0-9][a-z0-9-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "project_id": {
+      "pattern": "^prj-[a-z0-9][a-z0-9-]*$",
+      "title": "Project Id",
+      "type": "string"
+    },
+    "subject": {
+      "title": "Subject",
+      "type": "string"
+    },
+    "attribute": {
+      "title": "Attribute",
+      "type": "string"
+    },
+    "value_type": {
+      "$ref": "#/$defs/ValueType"
+    },
+    "unit": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Unit"
+    },
+    "description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Description"
+    }
+  },
+  "required": [
+    "id",
+    "project_id",
+    "subject",
+    "attribute",
+    "value_type"
+  ],
+  "title": "Fact",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mate.example/schema/facts.schema.json"
+}

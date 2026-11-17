@@ -1,0 +1,21 @@
+{
+  "question_id": "qst_0501",
+  "question_type": "conflicting_info",
+  "source_types": [
+    "confluence",
+    "gmail"
+  ],
+  "question": "What support coverage is committed for Redwood Private upgrades?",
+  "expected_doc_ids": [
+    "dsid_c6a6396159964deeb021d646eaaf2b0c",
+    "dsid_660b0f3e25584320aabdaf3da516fb80"
+  ],
+  "gold_answer": "Redwood can staff the planned maintenance window with Redwood support and SRE escalation. A minimum of 48 hours notice is required, and a live bridge will be opened at the start of the window, maintaining coverage until completion or confirmed rollback.",
+  "answer_facts": [
+    "The support commitment includes Redwood support and SRE escalation.",
+    "A minimum of 48 hours advance notice is required to schedule the support engagement.",
+    "Support involves opening a live bridge at the start of the maintenance window.",
+    "Coverage is maintained continuously until the upgrade completes or a rollback is confirmed.",
+    "Audit log availability is contingent upon the specific version being used or targeted."
+  ]
+}

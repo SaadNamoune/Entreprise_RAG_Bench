@@ -1,0 +1,114 @@
+{
+  "$defs": {
+    "InjectionKind": {
+      "enum": [
+        "resend",
+        "forward_copy",
+        "near_copy",
+        "boilerplate",
+        "distractor_thread",
+        "lookalike_project",
+        "supersession",
+        "contradiction",
+        "erroneous_claim",
+        "image_text_conflict",
+        "auto_reply",
+        "newsletter"
+      ],
+      "title": "InjectionKind",
+      "type": "string"
+    },
+    "Ref": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/RefKind"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "id"
+      ],
+      "title": "Ref",
+      "type": "object"
+    },
+    "RefKind": {
+      "enum": [
+        "message",
+        "occurrence",
+        "version",
+        "artifact",
+        "span",
+        "fact_value",
+        "thread"
+      ],
+      "title": "RefKind",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "One planned difficulty, logged so every label can be audited back to its cause.",
+  "properties": {
+    "id": {
+      "pattern": "^inj-[a-z0-9][a-z0-9-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "kind": {
+      "$ref": "#/$defs/InjectionKind"
+    },
+    "targets": {
+      "items": {
+        "$ref": "#/$defs/Ref"
+      },
+      "minItems": 1,
+      "title": "Targets",
+      "type": "array"
+    },
+    "params": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "boolean"
+          }
+        ]
+      },
+      "title": "Params",
+      "type": "object"
+    },
+    "note": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Note"
+    }
+  },
+  "required": [
+    "id",
+    "kind",
+    "targets"
+  ],
+  "title": "Injection",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mate.example/schema/injections.schema.json"
+}

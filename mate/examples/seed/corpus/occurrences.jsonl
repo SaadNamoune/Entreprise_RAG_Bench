@@ -1,0 +1,10 @@
+{"id":"occ-01","message_id":"msg-01","version_id":"ver-offer-v1","role":"appended","filename":"Offer_HP-2041.pdf","order":0}
+{"id":"occ-02","message_id":"msg-02","version_id":"ver-logo-v1","role":"inline_decorative","filename":"image001.png","content_id":"logo.lv.0113@donaumetall.example","order":0}
+{"id":"occ-03","message_id":"msg-03","version_id":"ver-offer-v2","role":"appended","filename":"Offer_HP-2041_rev1.pdf","order":0}
+{"id":"occ-04","message_id":"msg-04","version_id":"ver-logo-v1","role":"inline_decorative","filename":"image001.png","content_id":"logo.lv.0118@donaumetall.example","order":0}
+{"id":"occ-05","message_id":"msg-04","version_id":"ver-offer-v2","role":"appended","filename":"Offer_HP-2041_rev1.pdf","order":1}
+{"id":"occ-06","message_id":"msg-05","version_id":"ver-chart-v1","role":"inline","filename":"Kennlinie_P-200.png","content_id":"kennlinie.p200@donaumetall.example","order":0}
+{"id":"occ-07","message_id":"msg-05","version_id":"ver-report-v1","role":"appended","filename":"Pruefbericht_P200.docx","order":1}
+{"id":"occ-08","message_id":"msg-06","version_id":"ver-logo-v1","role":"inline_decorative","filename":"image001.png","content_id":"logo.lv.0121@donaumetall.example","order":0}
+{"id":"occ-09","message_id":"msg-08","version_id":"ver-budget-v1","role":"appended","filename":"Budget_2027_Q1.xlsx","order":0}
+{"id":"occ-10","message_id":"msg-10","version_id":"ver-dn-v1","role":"appended","filename":"Lieferschein_LS-77815.pdf","order":0}

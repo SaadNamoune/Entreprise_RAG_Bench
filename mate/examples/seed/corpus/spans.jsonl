@@ -1,0 +1,43 @@
+{"id":"spn-001","fact_value_id":"fv-offer-no","location":{"kind":"body","message_id":"msg-01"},"anchor":"HP-2041","origin":"original","derived":false}
+{"id":"spn-002","fact_value_id":"fv-price-v1","location":{"kind":"body","message_id":"msg-01"},"anchor":"€48,370","origin":"original","derived":false}
+{"id":"spn-003","fact_value_id":"fv-deliv-v1","location":{"kind":"body","message_id":"msg-01"},"anchor":"14 weeks","origin":"original","derived":false}
+{"id":"spn-004","fact_value_id":"fv-required-date","location":{"kind":"body","message_id":"msg-02"},"anchor":"30 April 2027","origin":"original","derived":false}
+{"id":"spn-005","fact_value_id":"fv-deliv-v2","location":{"kind":"body","message_id":"msg-03"},"anchor":"9 weeks","origin":"original","derived":false}
+{"id":"spn-006","fact_value_id":"fv-price-v2","location":{"kind":"body","message_id":"msg-03"},"anchor":"€47,950","origin":"original","derived":false}
+{"id":"spn-007","location":{"kind":"body","message_id":"msg-03"},"anchor":"the revised offer attached","origin":"original","derived":false}
+{"id":"spn-008","fact_value_id":"fv-deliv-v2","location":{"kind":"body","message_id":"msg-04"},"anchor":"9 Wochen","origin":"restated","derived":false}
+{"id":"spn-009","fact_value_id":"fv-forwarder","location":{"kind":"header","message_id":"msg-04","region":"From"},"anchor":"Lena Vogt","origin":"original","derived":false}
+{"id":"spn-010","fact_value_id":"fv-reviewer","location":{"kind":"header","message_id":"msg-04","region":"To"},"anchor":"Jonas Becker","origin":"original","derived":false}
+{"id":"spn-011","location":{"kind":"body","message_id":"msg-05"},"anchor":"laut Kennlinie","origin":"original","derived":false}
+{"id":"spn-012","location":{"kind":"body","message_id":"msg-05"},"anchor":"Den Prüfbericht hänge ich an","origin":"original","derived":false}
+{"id":"spn-013","fact_value_id":"fv-offer-no","location":{"kind":"body","message_id":"msg-06"},"anchor":"HP-2041","origin":"restated","derived":false}
+{"id":"spn-014","fact_value_id":"fv-budget","location":{"kind":"body","message_id":"msg-08"},"anchor":"95.000 €","origin":"original","derived":false}
+{"id":"spn-015","fact_value_id":"fv-warranty-mail","location":{"kind":"body","message_id":"msg-09"},"anchor":"24 months","origin":"original","derived":false}
+{"id":"spn-016","location":{"kind":"body","message_id":"msg-10"},"anchor":"the delivery note","origin":"original","derived":false}
+{"id":"spn-017","fact_value_id":"fv-dn-sent","location":{"kind":"header","message_id":"msg-10","region":"Date"},"anchor":"2 March 2027","origin":"original","derived":false}
+{"id":"spn-018","fact_value_id":"fv-offer-no","location":{"kind":"file","version_id":"ver-offer-v1","page":1,"part":"text","region":"title"},"anchor":"HP-2041","origin":"original","derived":false}
+{"id":"spn-019","fact_value_id":"fv-price-v1","location":{"kind":"file","version_id":"ver-offer-v1","page":1,"part":"table","region":"row P-200"},"anchor":"€48,370","origin":"original","derived":false}
+{"id":"spn-020","fact_value_id":"fv-deliv-v1","location":{"kind":"file","version_id":"ver-offer-v1","page":1,"part":"table","region":"row Delivery time"},"anchor":"14 weeks","origin":"original","derived":false}
+{"id":"spn-021","fact_value_id":"fv-warranty-offer","location":{"kind":"file","version_id":"ver-offer-v1","page":1,"part":"table","region":"row Warranty"},"anchor":"36 months","origin":"original","derived":false}
+{"id":"spn-022","fact_value_id":"fv-offer-no","location":{"kind":"file","version_id":"ver-offer-v2","page":1,"part":"text","region":"title"},"anchor":"HP-2041","origin":"original","derived":false}
+{"id":"spn-023","fact_value_id":"fv-price-v2","location":{"kind":"file","version_id":"ver-offer-v2","page":1,"part":"table","region":"row P-200"},"anchor":"€47,950","origin":"original","derived":false}
+{"id":"spn-024","fact_value_id":"fv-deliv-v2","location":{"kind":"file","version_id":"ver-offer-v2","page":1,"part":"table","region":"row Delivery time"},"anchor":"9 weeks","origin":"original","derived":false}
+{"id":"spn-025","fact_value_id":"fv-warranty-offer","location":{"kind":"file","version_id":"ver-offer-v2","page":1,"part":"table","region":"row Warranty"},"anchor":"36 months","origin":"original","derived":false}
+{"id":"spn-026","fact_value_id":"fv-head","location":{"kind":"file","version_id":"ver-chart-v1","part":"image","region":"annotation at rated flow"},"anchor":"62 m","origin":"original","derived":false}
+{"id":"spn-027","fact_value_id":"fv-test-pressure","location":{"kind":"file","version_id":"ver-report-v1","part":"table","region":"row Druckprüfung"},"anchor":"16 bar","origin":"original","derived":false}
+{"id":"spn-028","fact_value_id":"fv-budget","location":{"kind":"file","version_id":"ver-budget-v1","part":"table","region":"B2:C2"},"anchor":"95.000 €","origin":"original","derived":false}
+{"id":"spn-029","fact_value_id":"fv-dn-number","location":{"kind":"file","version_id":"ver-dn-v1","page":1,"part":"image","region":"header"},"anchor":"LS-77815","origin":"original","derived":false}
+{"id":"spn-030","fact_value_id":"fv-delivery-date","location":{"kind":"file","version_id":"ver-dn-v1","page":1,"part":"image","region":"header"},"anchor":"01.03.2027","origin":"original","derived":false}
+{"id":"spn-001-in-02","fact_value_id":"fv-offer-no","location":{"kind":"quoted_body","message_id":"msg-02"},"anchor":"HP-2041","origin":"quoted","copy_of":"spn-001","derived":true}
+{"id":"spn-002-in-02","fact_value_id":"fv-price-v1","location":{"kind":"quoted_body","message_id":"msg-02"},"anchor":"€48,370","origin":"quoted","copy_of":"spn-002","derived":true}
+{"id":"spn-003-in-02","fact_value_id":"fv-deliv-v1","location":{"kind":"quoted_body","message_id":"msg-02"},"anchor":"14 weeks","origin":"quoted","copy_of":"spn-003","derived":true}
+{"id":"spn-004-in-03","fact_value_id":"fv-required-date","location":{"kind":"quoted_body","message_id":"msg-03"},"anchor":"30 April 2027","origin":"quoted","copy_of":"spn-004","derived":true}
+{"id":"spn-001-in-02-in-03","fact_value_id":"fv-offer-no","location":{"kind":"quoted_body","message_id":"msg-03"},"anchor":"HP-2041","origin":"quoted","copy_of":"spn-001","derived":true}
+{"id":"spn-002-in-02-in-03","fact_value_id":"fv-price-v1","location":{"kind":"quoted_body","message_id":"msg-03"},"anchor":"€48,370","origin":"quoted","copy_of":"spn-002","derived":true}
+{"id":"spn-003-in-02-in-03","fact_value_id":"fv-deliv-v1","location":{"kind":"quoted_body","message_id":"msg-03"},"anchor":"14 weeks","origin":"quoted","copy_of":"spn-003","derived":true}
+{"id":"spn-005-in-04","fact_value_id":"fv-deliv-v2","location":{"kind":"forwarded_body","message_id":"msg-04"},"anchor":"9 weeks","origin":"forwarded","copy_of":"spn-005","derived":true}
+{"id":"spn-006-in-04","fact_value_id":"fv-price-v2","location":{"kind":"forwarded_body","message_id":"msg-04"},"anchor":"€47,950","origin":"forwarded","copy_of":"spn-006","derived":true}
+{"id":"spn-004-in-03-in-04","fact_value_id":"fv-required-date","location":{"kind":"forwarded_body","message_id":"msg-04"},"anchor":"30 April 2027","origin":"forwarded","copy_of":"spn-004","derived":true}
+{"id":"spn-001-in-02-in-03-in-04","fact_value_id":"fv-offer-no","location":{"kind":"forwarded_body","message_id":"msg-04"},"anchor":"HP-2041","origin":"forwarded","copy_of":"spn-001","derived":true}
+{"id":"spn-002-in-02-in-03-in-04","fact_value_id":"fv-price-v1","location":{"kind":"forwarded_body","message_id":"msg-04"},"anchor":"€48,370","origin":"forwarded","copy_of":"spn-002","derived":true}
+{"id":"spn-003-in-02-in-03-in-04","fact_value_id":"fv-deliv-v1","location":{"kind":"forwarded_body","message_id":"msg-04"},"anchor":"14 weeks","origin":"forwarded","copy_of":"spn-003","derived":true}

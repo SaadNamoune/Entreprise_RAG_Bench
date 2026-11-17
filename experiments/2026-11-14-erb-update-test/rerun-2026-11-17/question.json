@@ -1,0 +1,20 @@
+{
+  "question_id": "qst_0501",
+  "question_type": "conflicting_info",
+  "source_types": [
+    "confluence",
+    "gmail"
+  ],
+  "question": "What are the prerequisites for receiving Redwood Private upgrade support?",
+  "expected_doc_ids": [
+    "dsid_c6a6396159964deeb021d646eaaf2b0c",
+    "dsid_606b6b22549d4e7fbf8a58a8c00b6dc0"
+  ],
+  "gold_answer": "To receive dedicated Redwood Private upgrade support, the customer must formally confirm the maintenance window, share the target version and precheck outputs 48 hours prior, and document a non-production rollback drill.",
+  "answer_facts": [
+    "The customer must formally confirm the maintenance window to receive support.",
+    "The customer must provide the target version and precheck outputs at least 48 hours prior to the upgrade.",
+    "A documented rollback drill in non-production is a mandatory prerequisite for support commitment.",
+    "The answer must not describe the specific nature of the support commitment (e.g., SRE/Release Engineering coverage)."
+  ]
+}

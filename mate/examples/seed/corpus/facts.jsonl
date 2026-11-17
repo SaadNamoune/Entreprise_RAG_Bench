@@ -1,0 +1,13 @@
+{"id":"fct-unit-price","project_id":"prj-pumpstation-nord","subject":"Hydrova offer HP-2041","attribute":"unit price per P-200 pump","value_type":"money","unit":"EUR"}
+{"id":"fct-delivery-time","project_id":"prj-pumpstation-nord","subject":"Hydrova offer HP-2041","attribute":"delivery time after order","value_type":"duration"}
+{"id":"fct-offer-number","project_id":"prj-pumpstation-nord","subject":"Hydrova offer","attribute":"offer number","value_type":"identifier"}
+{"id":"fct-required-date","project_id":"prj-pumpstation-nord","subject":"P-200 pumps","attribute":"date by which both pumps must be on site","value_type":"date"}
+{"id":"fct-head","project_id":"prj-pumpstation-nord","subject":"P-200 pump","attribute":"head at rated flow","value_type":"quantity","unit":"m"}
+{"id":"fct-test-pressure","project_id":"prj-pumpstation-nord","subject":"P-200 pump","attribute":"test pressure","value_type":"quantity","unit":"bar"}
+{"id":"fct-budget","project_id":"prj-pumpstation-nord","subject":"P-200 pumps","attribute":"approved budget","value_type":"money","unit":"EUR"}
+{"id":"fct-warranty","project_id":"prj-pumpstation-nord","subject":"P-200 pumps","attribute":"warranty period","value_type":"duration"}
+{"id":"fct-dn-number","project_id":"prj-pumpstation-nord","subject":"delivery of the P-200 pumps","attribute":"delivery note number","value_type":"identifier"}
+{"id":"fct-delivery-date","project_id":"prj-pumpstation-nord","subject":"delivery of the P-200 pumps","attribute":"delivery date","value_type":"date"}
+{"id":"fct-dn-sent","project_id":"prj-pumpstation-nord","subject":"delivery note","attribute":"date Hydrova sent the delivery note","value_type":"date"}
+{"id":"fct-forwarder","project_id":"prj-pumpstation-nord","subject":"revised offer HP-2041","attribute":"who forwarded it for technical review","value_type":"person"}
+{"id":"fct-reviewer","project_id":"prj-pumpstation-nord","subject":"revised offer HP-2041","attribute":"who received it for technical review","value_type":"person"}

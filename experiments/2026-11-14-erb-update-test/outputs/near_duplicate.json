@@ -1,0 +1,60 @@
+{
+  "document_title": "Redwood Private Upgrade and Rollback Procedure Guidance",
+  "document_type": "Technical Policy Document",
+  "document_version": "1.1",
+  "last_updated": "2025-06-05T10:00:00Z",
+  "effective_date": "2025-06-05",
+  "target_audience": [
+    "Customer Operations Teams",
+    "Platform Engineers",
+    "Redwood Support Staff"
+  ],
+  "document_summary": "Defines the supported upgrade paths, rollback procedures, and required service level agreements for Redwood Private instances.",
+  "guidance_sections": [
+    "Upgrade Path Support",
+    "Rollback Procedure and Requirements",
+    "Maintenance Window Support Coverage",
+    "Auditability and Reporting"
+  ],
+  "supported_paths": [
+    "N-1 to N (In-place upgrades)",
+    "Major version skipping requires prior technical review"
+  ],
+  "prerequisites_for_rollback": [
+    "Pre-upgrade backup/snapshot of control-plane database must exist",
+    "Pre-upgrade backup/snapshot of configuration state must exist",
+    "Upgrade must not cross a non-reversible schema boundary"
+  ],
+  "rollback_process": [
+    "Stop/roll back application components to the prior running version",
+    "Restore the control-plane database from the pre-upgrade snapshot (if migrations were applied)"
+  ],
+  "estimated_restoration_time": "Typically on the order of tens of minutes. Exact time is dependent on the snapshot mechanism (PITR vs volume snapshot) and database size.",
+  "support_commitment": "We can staff planned maintenance windows with Redwood support and SRE escalation.",
+  "required_advance_notice": "A minimum of 48 hours notice is required to schedule support engagement.",
+  "support_delivery": [
+    "Live bridge will be opened at the start of the maintenance window.",
+    "Redwood SRE/release escalation is available continuously until completion or confirmed rollback."
+  ],
+  "additional_services": [
+    "Rollback drills in non-production environments are available upon request."
+  ],
+  "audit_reporting": "An upgrade report containing precheck results and timestamps for backup/upgrade steps is provided.",
+  "audit_log_availability": "Audit log entries reflecting upgrade start/stop and rollback invocation are available, contingent on the specific version deployed.",
+  "dataset_noise_document": true,
+  "title_field_name": "document_title",
+  "content_field_names": [
+    "guidance_sections",
+    "supported_paths",
+    "prerequisites_for_rollback",
+    "rollback_process",
+    "estimated_restoration_time",
+    "support_commitment",
+    "required_advance_notice",
+    "support_delivery",
+    "additional_services",
+    "audit_reporting",
+    "audit_log_availability"
+  ],
+  "dataset_doc_uuid": "dsid_660b0f3e25584320aabdaf3da516fb80"
+}

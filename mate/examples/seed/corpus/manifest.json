@@ -1,0 +1,47 @@
+{
+  "name": "MATE seed",
+  "schema_version": "1.0.0",
+  "corpus_version": "0.1.0",
+  "created_at": "2027-03-05T12:00:00+01:00",
+  "seed": 7,
+  "generator": "examples/seed/build_seed.py (hand-written scenario)",
+  "languages": [
+    "de",
+    "en"
+  ],
+  "licence": "CC-BY-4.0 (proposed)",
+  "counts": {
+    "organisations": 3,
+    "people": 6,
+    "projects": 1,
+    "facts": 13,
+    "fact_values": 16,
+    "artifacts": 6,
+    "versions": 7,
+    "threads": 6,
+    "messages": 11,
+    "occurrences": 10,
+    "spans": 43,
+    "relations": 5,
+    "injections": 6,
+    "questions": 15
+  },
+  "splits": {
+    "dev": [
+      "prj-pumpstation-nord"
+    ]
+  },
+  "files_sha256": {
+    "rendered/eml/msg-01.eml": "fd74e440fd83a06a70fc3732fbb75177e32ac2bc64ad63238c67a9269d622d35",
+    "rendered/eml/msg-02.eml": "aaf1f0c2a24536b2c7fee84f27def794a1e5a02017fc220810a9783d1735a9e1",
+    "rendered/eml/msg-03.eml": "acbf6d66f6b6b4317db9ad552ce2da87b72c08c588464dbca9206da2f2a1bfd8",
+    "rendered/eml/msg-04.eml": "fc8d09d572298bb09a53af13a4141827db0e9ee5f8e8004c3913c738eda3b86f",
+    "rendered/eml/msg-05.eml": "98a590662bc45b654b49d385113375c72d5612223523a8152ce99f1384a406d4",
+    "rendered/eml/msg-06.eml": "e674710e6fa9fece47342fc51c046821cb76fb7cacd02ceabe466857f7251cae",
+    "rendered/eml/msg-07.eml": "f1ae0dbfb5518d175037a9ef62668a5cef4a7ad06b8b83f30ddeaaacfede1348",
+    "rendered/eml/msg-08.eml": "4aaa410f9f1b9590da4173a80bc816d0a70eec9266d32d5df7cb6440148f9735",
+    "rendered/eml/msg-09.eml": "24c51c39a3dd9e61f4504a30934e5326293b22e45ec7fb1be637ac5bde88282c",
+    "rendered/eml/msg-10.eml": "6f8d057668e230663c642c4c75d1331646669937d87b4ba149ea5c14c4a4dbce",
+    "rendered/eml/msg-11.eml": "10f8b60a69a85d52b17877d8ee02188308d6a15b2f4530261dec07b7712333b0"
+  }
+}

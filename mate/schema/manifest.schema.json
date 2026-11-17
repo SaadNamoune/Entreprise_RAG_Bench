@@ -1,0 +1,90 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "schema_version": {
+      "default": "1.0.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "corpus_version": {
+      "title": "Corpus Version",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "seed": {
+      "title": "Seed",
+      "type": "integer"
+    },
+    "generator": {
+      "title": "Generator",
+      "type": "string"
+    },
+    "languages": {
+      "items": {
+        "enum": [
+          "de",
+          "en"
+        ],
+        "type": "string"
+      },
+      "title": "Languages",
+      "type": "array"
+    },
+    "licence": {
+      "title": "Licence",
+      "type": "string"
+    },
+    "counts": {
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "title": "Counts",
+      "type": "object"
+    },
+    "splits": {
+      "additionalProperties": {
+        "items": {
+          "pattern": "^prj-[a-z0-9][a-z0-9-]*$",
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "propertyNames": {
+        "enum": [
+          "dev",
+          "test"
+        ]
+      },
+      "title": "Splits",
+      "type": "object"
+    },
+    "files_sha256": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Files Sha256",
+      "type": "object"
+    }
+  },
+  "required": [
+    "name",
+    "corpus_version",
+    "created_at",
+    "seed",
+    "generator",
+    "languages",
+    "licence"
+  ],
+  "title": "Manifest",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mate.example/schema/manifest.schema.json"
+}

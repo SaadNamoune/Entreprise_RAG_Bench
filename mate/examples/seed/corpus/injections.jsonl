@@ -1,0 +1,6 @@
+{"id":"inj-001","kind":"supersession","targets":[{"kind":"version","id":"ver-offer-v2"},{"kind":"fact_value","id":"fv-price-v2"},{"kind":"fact_value","id":"fv-deliv-v2"}],"params":{},"note":"revised offer replaces v1"}
+{"id":"inj-002","kind":"forward_copy","targets":[{"kind":"message","id":"msg-04"},{"kind":"occurrence","id":"occ-05"}],"params":{},"note":"forward re-sends offer v2"}
+{"id":"inj-003","kind":"contradiction","targets":[{"kind":"fact_value","id":"fv-warranty-mail"}],"params":{},"note":"e-mail warranty contradicts the offer"}
+{"id":"inj-004","kind":"auto_reply","targets":[{"kind":"message","id":"msg-07"}],"params":{},"note":"out-of-office reply"}
+{"id":"inj-005","kind":"newsletter","targets":[{"kind":"message","id":"msg-11"}],"params":{},"note":"market prices as distractors"}
+{"id":"inj-006","kind":"boilerplate","targets":[{"kind":"message","id":"msg-02"},{"kind":"message","id":"msg-04"},{"kind":"message","id":"msg-06"}],"params":{},"note":"logo image and legal disclaimer in every Donaumetall message"}

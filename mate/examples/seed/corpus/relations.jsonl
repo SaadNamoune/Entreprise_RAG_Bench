@@ -1,0 +1,5 @@
+{"id":"rel-001","type":"REFERS_TO","source":{"kind":"span","id":"spn-007"},"target":{"kind":"occurrence","id":"occ-03"},"attrs":{"deixis":"local"}}
+{"id":"rel-002","type":"REFERS_TO","source":{"kind":"span","id":"spn-011"},"target":{"kind":"occurrence","id":"occ-06"},"attrs":{"deixis":"local"}}
+{"id":"rel-003","type":"REFERS_TO","source":{"kind":"span","id":"spn-012"},"target":{"kind":"occurrence","id":"occ-07"},"attrs":{"deixis":"local"}}
+{"id":"rel-004","type":"REFERS_TO","source":{"kind":"span","id":"spn-016"},"target":{"kind":"occurrence","id":"occ-10"},"attrs":{"deixis":"local"}}
+{"id":"rel-005","type":"CONTRADICTS","source":{"kind":"fact_value","id":"fv-warranty-mail"},"target":{"kind":"fact_value","id":"fv-warranty-offer"},"attrs":{"resolved":false}}

@@ -1,0 +1,16 @@
+{"id":"fv-price-v1","fact_id":"fct-unit-price","value":"48370.00 EUR","surfaces":{"en":["€48,370"],"de":["48.370 €"]},"valid_from":"2027-01-11T09:12:00+01:00","valid_to":"2027-01-18T10:05:00+01:00","standing":"valid","asserted_by":"per-tom-reed"}
+{"id":"fv-price-v2","fact_id":"fct-unit-price","value":"47950.00 EUR","surfaces":{"en":["€47,950"],"de":["47.950 €"]},"valid_from":"2027-01-18T10:05:00+01:00","supersedes":"fv-price-v1","standing":"valid","asserted_by":"per-tom-reed"}
+{"id":"fv-deliv-v1","fact_id":"fct-delivery-time","value":"14 weeks","surfaces":{"en":["14 weeks"],"de":["14 Wochen"]},"valid_from":"2027-01-11T09:12:00+01:00","valid_to":"2027-01-18T10:05:00+01:00","standing":"valid","asserted_by":"per-tom-reed"}
+{"id":"fv-deliv-v2","fact_id":"fct-delivery-time","value":"9 weeks","surfaces":{"en":["9 weeks"],"de":["9 Wochen"]},"valid_from":"2027-01-18T10:05:00+01:00","supersedes":"fv-deliv-v1","standing":"valid","asserted_by":"per-tom-reed"}
+{"id":"fv-offer-no","fact_id":"fct-offer-number","value":"HP-2041","surfaces":{"en":["HP-2041"],"de":["HP-2041"]},"valid_from":"2027-01-11T09:12:00+01:00","standing":"valid"}
+{"id":"fv-required-date","fact_id":"fct-required-date","value":"2027-04-30","surfaces":{"en":["30 April 2027"],"de":["30. April 2027"]},"valid_from":"2027-01-13T14:30:00+01:00","standing":"valid","asserted_by":"per-lena-vogt"}
+{"id":"fv-head","fact_id":"fct-head","value":"62 m","surfaces":{"en":["62 m"],"de":["62 m"]},"valid_from":"2027-01-20T16:40:00+01:00","standing":"valid","asserted_by":"per-jonas-becker"}
+{"id":"fv-test-pressure","fact_id":"fct-test-pressure","value":"16 bar","surfaces":{"en":["16 bar"],"de":["16 bar"]},"valid_from":"2027-01-20T16:40:00+01:00","standing":"valid"}
+{"id":"fv-budget","fact_id":"fct-budget","value":"95000.00 EUR","surfaces":{"en":["€95,000"],"de":["95.000 €"]},"valid_from":"2027-01-25T10:00:00+01:00","standing":"valid","asserted_by":"per-marco-huber"}
+{"id":"fv-warranty-offer","fact_id":"fct-warranty","value":"36 months","surfaces":{"en":["36 months"],"de":["36 Monate"]},"valid_from":"2027-01-11T09:12:00+01:00","standing":"contested","asserted_by":"per-tom-reed"}
+{"id":"fv-warranty-mail","fact_id":"fct-warranty","value":"24 months","surfaces":{"en":["24 months"],"de":["24 Monate"]},"valid_from":"2027-02-26T13:00:00+01:00","standing":"contested","asserted_by":"per-tom-reed"}
+{"id":"fv-dn-number","fact_id":"fct-dn-number","value":"LS-77815","surfaces":{"en":["LS-77815"],"de":["LS-77815"]},"valid_from":"2027-03-01T08:00:00+01:00","standing":"valid"}
+{"id":"fv-delivery-date","fact_id":"fct-delivery-date","value":"2027-03-01","surfaces":{"en":["1 March 2027"],"de":["1. März 2027","01.03.2027"]},"valid_from":"2027-03-01T08:00:00+01:00","standing":"valid"}
+{"id":"fv-dn-sent","fact_id":"fct-dn-sent","value":"2027-03-02","surfaces":{"en":["2 March 2027"],"de":["2. März 2027"]},"valid_from":"2027-03-02T09:30:00+01:00","standing":"valid"}
+{"id":"fv-forwarder","fact_id":"fct-forwarder","value":"Lena Vogt","surfaces":{"en":["Lena Vogt"],"de":["Lena Vogt"]},"valid_from":"2027-01-18T11:20:00+01:00","standing":"valid"}
+{"id":"fv-reviewer","fact_id":"fct-reviewer","value":"Jonas Becker","surfaces":{"en":["Jonas Becker"],"de":["Jonas Becker"]},"valid_from":"2027-01-18T11:20:00+01:00","standing":"valid"}

@@ -1,0 +1,82 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "pattern": "^prj-[a-z0-9][a-z0-9-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "codename": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Codename"
+    },
+    "owner_org_id": {
+      "pattern": "^org-[a-z0-9][a-z0-9-]*$",
+      "title": "Owner Org Id",
+      "type": "string"
+    },
+    "language": {
+      "enum": [
+        "de",
+        "en"
+      ],
+      "title": "Language",
+      "type": "string"
+    },
+    "start": {
+      "format": "date",
+      "title": "Start",
+      "type": "string"
+    },
+    "end": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "End"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "kind": {
+      "default": "project",
+      "enum": [
+        "project",
+        "background"
+      ],
+      "title": "Kind",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "owner_org_id",
+    "language",
+    "start",
+    "description"
+  ],
+  "title": "Project",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mate.example/schema/projects.schema.json"
+}

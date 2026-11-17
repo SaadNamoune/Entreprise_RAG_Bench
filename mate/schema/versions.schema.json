@@ -1,0 +1,190 @@
+{
+  "$defs": {
+    "Degradation": {
+      "additionalProperties": false,
+      "description": "How a scan or photo was degraded, so that OCR difficulty is a known, reportable factor.",
+      "properties": {
+        "dpi": {
+          "title": "Dpi",
+          "type": "integer"
+        },
+        "noise": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Noise",
+          "type": "number"
+        },
+        "skew_degrees": {
+          "default": 0.0,
+          "title": "Skew Degrees",
+          "type": "number"
+        },
+        "jpeg_quality": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Jpeg Quality"
+        }
+      },
+      "required": [
+        "dpi",
+        "noise"
+      ],
+      "title": "Degradation",
+      "type": "object"
+    },
+    "FileRef": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "media_type": {
+          "title": "Media Type",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "bytes": {
+          "exclusiveMinimum": 0,
+          "title": "Bytes",
+          "type": "integer"
+        },
+        "pages": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pages"
+        }
+      },
+      "required": [
+        "path",
+        "media_type",
+        "sha256",
+        "bytes"
+      ],
+      "title": "FileRef",
+      "type": "object"
+    },
+    "Modality": {
+      "description": "How the content of a version can be read; the stratification axis of RQ3 (C4).",
+      "enum": [
+        "text_document",
+        "slides",
+        "spreadsheet",
+        "scanned_document",
+        "chart_image",
+        "photo",
+        "screenshot",
+        "decorative_image"
+      ],
+      "title": "Modality",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "pattern": "^ver-[a-z0-9][a-z0-9-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "artifact_id": {
+      "pattern": "^art-[a-z0-9][a-z0-9-]*$",
+      "title": "Artifact Id",
+      "type": "string"
+    },
+    "label": {
+      "title": "Label",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "author": {
+      "pattern": "^per-[a-z0-9][a-z0-9-]*$",
+      "title": "Author",
+      "type": "string"
+    },
+    "modality": {
+      "$ref": "#/$defs/Modality"
+    },
+    "file": {
+      "$ref": "#/$defs/FileRef"
+    },
+    "supersedes": {
+      "anyOf": [
+        {
+          "pattern": "^ver-[a-z0-9][a-z0-9-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Supersedes"
+    },
+    "change_note": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Change Note"
+    },
+    "text_in_image": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Text In Image",
+      "type": "array"
+    },
+    "degradation": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Degradation"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "id",
+    "artifact_id",
+    "label",
+    "created_at",
+    "author",
+    "modality",
+    "file"
+  ],
+  "title": "ArtifactVersion",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mate.example/schema/versions.schema.json"
+}

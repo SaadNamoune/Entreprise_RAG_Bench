@@ -1,0 +1,6 @@
+{"id":"per-lena-vogt","name":"Lena Vogt","email":"lena.vogt@donaumetall.example","org_id":"org-donaumetall","title":"Einkauf","authority":2,"languages":["de","en"],"signature":"Lena Vogt\nEinkauf | Donaumetall GmbH\nTel. +49 991 0000-214"}
+{"id":"per-jonas-becker","name":"Jonas Becker","email":"jonas.becker@donaumetall.example","org_id":"org-donaumetall","title":"Technik / Anlagenbau","authority":2,"languages":["de","en"]}
+{"id":"per-marco-huber","name":"Marco Huber","email":"marco.huber@donaumetall.example","org_id":"org-donaumetall","title":"Controlling","authority":3,"languages":["de"]}
+{"id":"per-tom-reed","name":"Tom Reed","email":"tom.reed@hydrova.example","org_id":"org-hydrova","title":"Sales Manager","authority":2,"languages":["en"],"signature":"Tom Reed | Sales Manager\nHydrova Pumps Ltd\n+44 0000 000 112"}
+{"id":"per-amy-shaw","name":"Amy Shaw","email":"amy.shaw@hydrova.example","org_id":"org-hydrova","title":"Logistics Coordinator","authority":1,"languages":["en"]}
+{"id":"per-ipr-redaktion","name":"Redaktion Industrie-Pumpen-Report","email":"newsletter@industrie-report.example","org_id":"org-ipr","title":"Redaktion","authority":0,"languages":["de"]}

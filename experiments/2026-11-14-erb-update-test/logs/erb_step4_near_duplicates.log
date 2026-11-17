@@ -1,0 +1,160 @@
+Step 4: Generate Near-Duplicate Files
+========================================
+Creates near-duplicate documents with modified key facts (e.g. pricing changes,
+status updates). Unlike other noise steps, duplicates may be placed outside their
+original source type. The original and duplicate are tracked as pairs for
+downstream conflicting-information questions.
+
+Will generate 1 near-duplicate(s).
+
+Found 2 JSON files in sources.
+
+
+############################################################
+# Near-Duplicate 1 of 1
+############################################################
+
+Selected source file: gmail\20250603-customer-escalation-private-upgrade-rollback-request.json
+
+========================================
+Phase 1a: Generate New File Path
+========================================
+Waiting on LLM...
+sources/confluence/eng-private-deployments/upgrade-and-rollback/redwood-private-upgrade-rollback-guidance.json
+
+Valid directory path: confluence/eng-private-deployments/upgrade-and-rollback
+
+========================================
+Phase 1b: Rename File for Source Type
+========================================
+Waiting on LLM...
+redwood-private-upgrade-rollback-guidance.json
+
+Valid final path: confluence/eng-private-deployments/upgrade-and-rollback\redwood-private-upgrade-rollback-guidance.json
+
+========================================
+Selected Paths
+========================================
+Original: gmail\20250603-customer-escalation-private-upgrade-rollback-request.json
+New:      confluence/eng-private-deployments/upgrade-and-rollback\redwood-private-upgrade-rollback-guidance.json
+
+========================================
+Phase 2: Generate New File Contents
+========================================
+Waiting on LLM...
+{
+  "document_title": "Redwood Private Upgrade and Rollback Procedure Guidance",
+  "document_type": "Technical Policy Document",
+  "document_version": "1.1",
+  "last_updated": "2025-06-05T10:00:00Z",
+  "effective_date": "2025-06-05",
+  "target_audience": [
+    "Customer Operations Teams",
+    "Platform Engineers",
+    "Redwood Support Staff"
+  ],
+  "document_summary": "Defines the supported upgrade paths, rollback procedures, and required service level agreements for Redwood Private instances.",
+  "guidance_sections": [
+    "Upgrade Path Support",
+    "Rollback Procedure and Requirements",
+    "Maintenance Window Support Coverage",
+    "Auditability and Reporting"
+  ],
+  "upgrade_guidance": {
+    "supported_paths": [
+      "N-1 to N (In-place upgrades)",
+      "Major version skipping requires prior technical review"
+    ],
+    "prerequisites_for_rollback": [
+      "Pre-upgrade backup/snapshot of control-plane database must exist",
+      "Pre-upgrade backup/snapshot of configuration state must exist",
+      "Upgrade must not cross a non-reversible schema boundary"
+    ],
+    "rollback_process": [
+      "Stop/roll back application components to the prior running version",
+      "Restore the control-plane database from the pre-upgrade snapshot (if migrations were applied)"
+    ],
+    "estimated_restoration_time": "Typically on the order of tens of minutes. Exact time is dependent on the snapshot mechanism (PITR vs volume snapshot) and database size."
+  },
+  "support_coverage_details": {
+    "commitment": "We can staff planned maintenance windows with Redwood support and SRE escalation.",
+    "required_advance_notice": "A minimum of 48 hours notice is required to schedule support engagement.",
+    "support_delivery": [
+      "Live bridge will be opened at the start of the maintenance window.",
+      "Redwood SRE/release escalation is available continuously until completion or confirmed rollback."
+    ],
+    "additional_services": [
+      "Rollback drills in non-production environments are available upon request."
+    ]
+  },
+  "compliance_details": {
+    "audit_reporting": "An upgrade report containing precheck results and timestamps for backup/upgrade steps is provided.",
+    "audit_log_availability": "Audit log entries reflecting upgrade start/stop and rollback invocation are available, contingent on the specific version deployed."
+  }
+}
+
+Validation error: Nested dicts found in keys: ['upgrade_guidance', 'support_coverage_details', 'compliance_details']
+
+Attempt 2/3...
+Waiting on LLM...
+{
+  "document_title": "Redwood Private Upgrade and Rollback Procedure Guidance",
+  "document_type": "Technical Policy Document",
+  "document_version": "1.1",
+  "last_updated": "2025-06-05T10:00:00Z",
+  "effective_date": "2025-06-05",
+  "target_audience": [
+    "Customer Operations Teams",
+    "Platform Engineers",
+    "Redwood Support Staff"
+  ],
+  "document_summary": "Defines the supported upgrade paths, rollback procedures, and required service level agreements for Redwood Private instances.",
+  "guidance_sections": [
+    "Upgrade Path Support",
+    "Rollback Procedure and Requirements",
+    "Maintenance Window Support Coverage",
+    "Auditability and Reporting"
+  ],
+  "supported_paths": [
+    "N-1 to N (In-place upgrades)",
+    "Major version skipping requires prior technical review"
+  ],
+  "prerequisites_for_rollback": [
+    "Pre-upgrade backup/snapshot of control-plane database must exist",
+    "Pre-upgrade backup/snapshot of configuration state must exist",
+    "Upgrade must not cross a non-reversible schema boundary"
+  ],
+  "rollback_process": [
+    "Stop/roll back application components to the prior running version",
+    "Restore the control-plane database from the pre-upgrade snapshot (if migrations were applied)"
+  ],
+  "estimated_restoration_time": "Typically on the order of tens of minutes. Exact time is dependent on the snapshot mechanism (PITR vs volume snapshot) and database size.",
+  "support_commitment": "We can staff planned maintenance windows with Redwood support and SRE escalation.",
+  "required_advance_notice": "A minimum of 48 hours notice is required to schedule support engagement.",
+  "support_delivery": [
+    "Live bridge will be opened at the start of the maintenance window.",
+    "Redwood SRE/release escalation is available continuously until completion or confirmed rollback."
+  ],
+  "additional_services": [
+    "Rollback drills in non-production environments are available upon request."
+  ],
+  "audit_reporting": "An upgrade report containing precheck results and timestamps for backup/upgrade steps is provided.",
+  "audit_log_availability": "Audit log entries reflecting upgrade start/stop and rollback invocation are available, contingent on the specific version deployed."
+}
+
+Valid JSON generated
+Waiting on LLM...
+
+Successfully wrote to confluence/eng-private-deployments/upgrade-and-rollback/redwood-private-upgrade-rollback-guidance.json
+
+Wrote cache entry to generation_cache\duplications.json
+
+SUCCESS: Created confluence/eng-private-deployments/upgrade-and-rollback\redwood-private-upgrade-rollback-guidance.json
+
+============================================================
+Summary
+============================================================
+Successfully created: 1
+Failed: 0
+
+This is the end of Stage 2 - Adding noise to the dataset.

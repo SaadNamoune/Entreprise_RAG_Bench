@@ -1,0 +1,60 @@
+{
+  "$defs": {
+    "ThreadKind": {
+      "enum": [
+        "project",
+        "background",
+        "newsletter",
+        "notification"
+      ],
+      "title": "ThreadKind",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "pattern": "^thr-[a-z0-9][a-z0-9-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "project_id": {
+      "anyOf": [
+        {
+          "pattern": "^prj-[a-z0-9][a-z0-9-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Project Id"
+    },
+    "subject": {
+      "title": "Subject",
+      "type": "string"
+    },
+    "language": {
+      "enum": [
+        "de",
+        "en"
+      ],
+      "title": "Language",
+      "type": "string"
+    },
+    "kind": {
+      "$ref": "#/$defs/ThreadKind",
+      "default": "project"
+    }
+  },
+  "required": [
+    "id",
+    "subject",
+    "language"
+  ],
+  "title": "Thread",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mate.example/schema/threads.schema.json"
+}

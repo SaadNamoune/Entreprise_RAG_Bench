@@ -1,0 +1,200 @@
+{
+  "$defs": {
+    "Body": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "signature": {
+          "default": true,
+          "title": "Signature",
+          "type": "boolean"
+        },
+        "disclaimer": {
+          "default": true,
+          "title": "Disclaimer",
+          "type": "boolean"
+        },
+        "quote": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Quote"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "html": {
+          "default": true,
+          "title": "Html",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "title": "Body",
+      "type": "object"
+    },
+    "MessageKind": {
+      "enum": [
+        "new",
+        "reply",
+        "reply_all",
+        "forward",
+        "resend",
+        "auto_reply",
+        "newsletter",
+        "notification"
+      ],
+      "title": "MessageKind",
+      "type": "string"
+    },
+    "Quote": {
+      "additionalProperties": false,
+      "properties": {
+        "message_id": {
+          "pattern": "^msg-[a-z0-9][a-z0-9-]*$",
+          "title": "Message Id",
+          "type": "string"
+        },
+        "style": {
+          "$ref": "#/$defs/QuoteStyle"
+        }
+      },
+      "required": [
+        "message_id",
+        "style"
+      ],
+      "title": "Quote",
+      "type": "object"
+    },
+    "QuoteStyle": {
+      "description": "How a client writes the history under a reply; it decides what byte-exact deduplication sees.",
+      "enum": [
+        "outlook_header",
+        "prefix_gt",
+        "none"
+      ],
+      "title": "QuoteStyle",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "pattern": "^msg-[a-z0-9][a-z0-9-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "rfc_message_id": {
+      "pattern": "^<[^<>@\\s]+@[a-z0-9.-]+\\.example>$",
+      "title": "Rfc Message Id",
+      "type": "string"
+    },
+    "thread_id": {
+      "pattern": "^thr-[a-z0-9][a-z0-9-]*$",
+      "title": "Thread Id",
+      "type": "string"
+    },
+    "kind": {
+      "$ref": "#/$defs/MessageKind"
+    },
+    "in_reply_to": {
+      "anyOf": [
+        {
+          "pattern": "^msg-[a-z0-9][a-z0-9-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "In Reply To"
+    },
+    "forward_of": {
+      "anyOf": [
+        {
+          "pattern": "^msg-[a-z0-9][a-z0-9-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Forward Of"
+    },
+    "sender": {
+      "pattern": "^per-[a-z0-9][a-z0-9-]*$",
+      "title": "Sender",
+      "type": "string"
+    },
+    "to": {
+      "items": {
+        "pattern": "^per-[a-z0-9][a-z0-9-]*$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "To",
+      "type": "array"
+    },
+    "cc": {
+      "items": {
+        "pattern": "^per-[a-z0-9][a-z0-9-]*$",
+        "type": "string"
+      },
+      "title": "Cc",
+      "type": "array"
+    },
+    "bcc": {
+      "items": {
+        "pattern": "^per-[a-z0-9][a-z0-9-]*$",
+        "type": "string"
+      },
+      "title": "Bcc",
+      "type": "array"
+    },
+    "sent_at": {
+      "format": "date-time",
+      "title": "Sent At",
+      "type": "string"
+    },
+    "subject": {
+      "title": "Subject",
+      "type": "string"
+    },
+    "language": {
+      "enum": [
+        "de",
+        "en"
+      ],
+      "title": "Language",
+      "type": "string"
+    },
+    "body": {
+      "$ref": "#/$defs/Body"
+    }
+  },
+  "required": [
+    "id",
+    "rfc_message_id",
+    "thread_id",
+    "kind",
+    "sender",
+    "to",
+    "sent_at",
+    "subject",
+    "language",
+    "body"
+  ],
+  "title": "Message",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mate.example/schema/messages.schema.json"
+}

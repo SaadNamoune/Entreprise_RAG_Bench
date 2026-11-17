@@ -1,0 +1,71 @@
+{
+  "$defs": {
+    "ArtifactKind": {
+      "enum": [
+        "offer",
+        "order",
+        "invoice",
+        "contract",
+        "specification",
+        "drawing",
+        "test_report",
+        "minutes",
+        "report",
+        "presentation",
+        "spreadsheet",
+        "chart",
+        "photo",
+        "screenshot",
+        "delivery_note",
+        "certificate",
+        "logo",
+        "other"
+      ],
+      "title": "ArtifactKind",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "pattern": "^art-[a-z0-9][a-z0-9-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "project_id": {
+      "anyOf": [
+        {
+          "pattern": "^prj-[a-z0-9][a-z0-9-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Project Id"
+    },
+    "kind": {
+      "$ref": "#/$defs/ArtifactKind"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "owner": {
+      "pattern": "^per-[a-z0-9][a-z0-9-]*$",
+      "title": "Owner",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "kind",
+    "title",
+    "owner"
+  ],
+  "title": "Artifact",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mate.example/schema/artifacts.schema.json"
+}

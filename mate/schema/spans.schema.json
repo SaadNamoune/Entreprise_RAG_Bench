@@ -1,0 +1,169 @@
+{
+  "$defs": {
+    "LocKind": {
+      "enum": [
+        "header",
+        "subject",
+        "body",
+        "quoted_body",
+        "forwarded_body",
+        "file"
+      ],
+      "title": "LocKind",
+      "type": "string"
+    },
+    "Location": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/LocKind"
+        },
+        "message_id": {
+          "anyOf": [
+            {
+              "pattern": "^msg-[a-z0-9][a-z0-9-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Message Id"
+        },
+        "version_id": {
+          "anyOf": [
+            {
+              "pattern": "^ver-[a-z0-9][a-z0-9-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version Id"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page"
+        },
+        "part": {
+          "anyOf": [
+            {
+              "enum": [
+                "text",
+                "table",
+                "image",
+                "caption"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Part"
+        },
+        "region": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Region"
+        }
+      },
+      "required": [
+        "kind"
+      ],
+      "title": "Location",
+      "type": "object"
+    },
+    "SpanOrigin": {
+      "enum": [
+        "original",
+        "quoted",
+        "forwarded",
+        "restated"
+      ],
+      "title": "SpanOrigin",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "A place where a fact value is stated, or a sentence that refers to an attachment.",
+  "properties": {
+    "id": {
+      "pattern": "^spn-[a-z0-9][a-z0-9-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "fact_value_id": {
+      "anyOf": [
+        {
+          "pattern": "^fv-[a-z0-9][a-z0-9-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Fact Value Id"
+    },
+    "location": {
+      "$ref": "#/$defs/Location"
+    },
+    "anchor": {
+      "maxLength": 80,
+      "minLength": 1,
+      "title": "Anchor",
+      "type": "string"
+    },
+    "origin": {
+      "$ref": "#/$defs/SpanOrigin",
+      "default": "original"
+    },
+    "copy_of": {
+      "anyOf": [
+        {
+          "pattern": "^spn-[a-z0-9][a-z0-9-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Copy Of"
+    },
+    "derived": {
+      "default": false,
+      "title": "Derived",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "location",
+    "anchor"
+  ],
+  "title": "Span",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mate.example/schema/spans.schema.json"
+}

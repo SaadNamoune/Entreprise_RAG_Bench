@@ -1,0 +1,70 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "pattern": "^per-[a-z0-9][a-z0-9-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "email": {
+      "title": "Email",
+      "type": "string"
+    },
+    "org_id": {
+      "pattern": "^org-[a-z0-9][a-z0-9-]*$",
+      "title": "Org Id",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "authority": {
+      "default": 1,
+      "maximum": 3,
+      "minimum": 0,
+      "title": "Authority",
+      "type": "integer"
+    },
+    "languages": {
+      "items": {
+        "enum": [
+          "de",
+          "en"
+        ],
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Languages",
+      "type": "array"
+    },
+    "signature": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Signature"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "email",
+    "org_id",
+    "title",
+    "languages"
+  ],
+  "title": "Person",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mate.example/schema/people.schema.json"
+}

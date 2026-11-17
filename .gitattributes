@@ -1,0 +1,4 @@
+# E-mail files use CRLF line endings (RFC 5322) and their SHA-256 hashes are recorded in the
+# corpus manifest: store and check them out byte for byte.
+*.eml  -text
+*.mbox -text

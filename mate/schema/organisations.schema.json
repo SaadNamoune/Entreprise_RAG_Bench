@@ -1,0 +1,66 @@
+{
+  "$defs": {
+    "OrgKind": {
+      "enum": [
+        "internal",
+        "customer",
+        "supplier",
+        "partner",
+        "service"
+      ],
+      "title": "OrgKind",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "pattern": "^org-[a-z0-9][a-z0-9-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "domain": {
+      "pattern": "^[a-z0-9-]+(\\.[a-z0-9-]+)*\\.example$",
+      "title": "Domain",
+      "type": "string"
+    },
+    "kind": {
+      "$ref": "#/$defs/OrgKind"
+    },
+    "language": {
+      "enum": [
+        "de",
+        "en"
+      ],
+      "title": "Language",
+      "type": "string"
+    },
+    "disclaimer": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Disclaimer"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "domain",
+    "kind",
+    "language"
+  ],
+  "title": "Organisation",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mate.example/schema/organisations.schema.json"
+}

@@ -1,0 +1,32 @@
+{
+  "document_type": "Upgrade_Rollback_Guidance",
+  "document_title": "Redwood Private Deployment: Upgrade and Rollback Procedure & Support Guidance",
+  "document_status": "Official Policy",
+  "version": "2.1",
+  "last_updated": "2025-07-15T14:00:00-07:00",
+  "source_system": "Confluence Knowledge Base",
+  "scope": "Provides standard operational guidance for private cloud deployments utilizing Redwood Private, covering required prerequisites, supported upgrade paths, and defined support coverage commitments.",
+  "target_audience": [
+    "Platform Operations Teams",
+    "Solutions Engineers",
+    "Customer Success Managers"
+  ],
+  "knowledge_points": [
+    "Supported Upgrade Paths: Redwood Private supports in-place upgrades following a defined major version path (N-1 to N). Skipping major versions requires pre-approval via a Service Review Board.",
+    "Rollback Procedure: Rollback is supported after an upgrade failure, provided specific prerequisites are met.",
+    "Rollback Steps: 1) Verify pre-upgrade snapshot integrity of control-plane DB and config state. 2) If failure pre-migration, roll back application components. 3) If failure post-migration, restore DB from pre-upgrade snapshot (PITR or volume snapshot).",
+    "Rollback Caveats: Service restoration time is typically tens of minutes, depending on the storage backend (e.g., Managed DB PITR size vs. EBS/CSI recovery). Rollback is invalidated by non-reversible schema boundaries.",
+    "Support Coverage: Redwood Inference offers escalated support for planned private deployments, subject to meeting prerequisites.",
+    "Support Commitment: We commit to dedicated SRE/Release Engineering bridge coverage during the defined maintenance window.",
+    "Prerequisites for Support: Customer must share target version and precheck outputs 48 hours prior. A rollback drill in non-production must be documented. Window must be formally confirmed.",
+    "Support Response: A live support bridge will be established at the start of the window, ensuring continuous coverage until completion or rollback is confirmed.",
+    "Compliance: Redwood provides comprehensive reporting for all upgrade operations to meet regulatory requirements.",
+    "Audit Artifacts: Provided items include an Upgrade Report (precheck results, backup timestamps) and Audit Log Entries (upgrade start/stop, rollback invocation, depending on the Private version)."
+  ],
+  "dataset_noise_document": true,
+  "title_field_name": "document_title",
+  "content_field_names": [
+    "knowledge_points"
+  ],
+  "dataset_doc_uuid": "dsid_606b6b22549d4e7fbf8a58a8c00b6dc0"
+}

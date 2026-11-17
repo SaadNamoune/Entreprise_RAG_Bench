@@ -1,0 +1,71 @@
+{
+  "$defs": {
+    "Role": {
+      "description": "The role of an occurrence in its message: the distinction claim C3 says is untreated.",
+      "enum": [
+        "appended",
+        "inline",
+        "inline_decorative",
+        "forwarded_embedded",
+        "link_only"
+      ],
+      "title": "Role",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "One version carried by one message, with the role it has there.",
+  "properties": {
+    "id": {
+      "pattern": "^occ-[a-z0-9][a-z0-9-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "message_id": {
+      "pattern": "^msg-[a-z0-9][a-z0-9-]*$",
+      "title": "Message Id",
+      "type": "string"
+    },
+    "version_id": {
+      "pattern": "^ver-[a-z0-9][a-z0-9-]*$",
+      "title": "Version Id",
+      "type": "string"
+    },
+    "role": {
+      "$ref": "#/$defs/Role"
+    },
+    "filename": {
+      "title": "Filename",
+      "type": "string"
+    },
+    "content_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Content Id"
+    },
+    "order": {
+      "minimum": 0,
+      "title": "Order",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "message_id",
+    "version_id",
+    "role",
+    "filename",
+    "order"
+  ],
+  "title": "Occurrence",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mate.example/schema/occurrences.schema.json"
+}

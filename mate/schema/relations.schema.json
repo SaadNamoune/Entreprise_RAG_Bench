@@ -1,0 +1,93 @@
+{
+  "$defs": {
+    "Ref": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/RefKind"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "id"
+      ],
+      "title": "Ref",
+      "type": "object"
+    },
+    "RefKind": {
+      "enum": [
+        "message",
+        "occurrence",
+        "version",
+        "artifact",
+        "span",
+        "fact_value",
+        "thread"
+      ],
+      "title": "RefKind",
+      "type": "string"
+    },
+    "RelType": {
+      "description": "Typed links that are not already fields; replies, forwards and supersession are fields.",
+      "enum": [
+        "REFERS_TO",
+        "CONTRADICTS",
+        "NEAR_COPY_OF",
+        "DERIVED_FROM"
+      ],
+      "title": "RelType",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "pattern": "^rel-[a-z0-9][a-z0-9-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "type": {
+      "$ref": "#/$defs/RelType"
+    },
+    "source": {
+      "$ref": "#/$defs/Ref"
+    },
+    "target": {
+      "$ref": "#/$defs/Ref"
+    },
+    "attrs": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "boolean"
+          }
+        ]
+      },
+      "title": "Attrs",
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "source",
+    "target"
+  ],
+  "title": "Relation",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mate.example/schema/relations.schema.json"
+}

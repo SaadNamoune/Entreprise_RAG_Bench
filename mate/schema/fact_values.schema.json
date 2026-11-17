@@ -1,0 +1,118 @@
+{
+  "$defs": {
+    "Standing": {
+      "enum": [
+        "valid",
+        "contested",
+        "erroneous"
+      ],
+      "title": "Standing",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "pattern": "^fv-[a-z0-9][a-z0-9-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "fact_id": {
+      "pattern": "^fct-[a-z0-9][a-z0-9-]*$",
+      "title": "Fact Id",
+      "type": "string"
+    },
+    "value": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "boolean"
+        }
+      ],
+      "title": "Value"
+    },
+    "surfaces": {
+      "additionalProperties": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "propertyNames": {
+        "enum": [
+          "de",
+          "en"
+        ]
+      },
+      "title": "Surfaces",
+      "type": "object"
+    },
+    "valid_from": {
+      "format": "date-time",
+      "title": "Valid From",
+      "type": "string"
+    },
+    "valid_to": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Valid To"
+    },
+    "supersedes": {
+      "anyOf": [
+        {
+          "pattern": "^fv-[a-z0-9][a-z0-9-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Supersedes"
+    },
+    "standing": {
+      "$ref": "#/$defs/Standing",
+      "default": "valid"
+    },
+    "asserted_by": {
+      "anyOf": [
+        {
+          "pattern": "^per-[a-z0-9][a-z0-9-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Asserted By"
+    }
+  },
+  "required": [
+    "id",
+    "fact_id",
+    "value",
+    "surfaces",
+    "valid_from"
+  ],
+  "title": "FactValue",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mate.example/schema/fact_values.schema.json"
+}

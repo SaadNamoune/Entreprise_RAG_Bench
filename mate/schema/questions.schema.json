@@ -1,0 +1,428 @@
+{
+  "$defs": {
+    "Answer": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/AnswerKind"
+        },
+        "reference_text": {
+          "title": "Reference Text",
+          "type": "string"
+        },
+        "accepted": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Accepted",
+          "type": "array"
+        },
+        "superseded": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Superseded",
+          "type": "array"
+        },
+        "fact_value_ids": {
+          "items": {
+            "pattern": "^fv-[a-z0-9][a-z0-9-]*$",
+            "type": "string"
+          },
+          "title": "Fact Value Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind",
+        "reference_text"
+      ],
+      "title": "Answer",
+      "type": "object"
+    },
+    "AnswerKind": {
+      "enum": [
+        "value",
+        "values",
+        "count",
+        "boolean",
+        "person",
+        "date",
+        "summary",
+        "contested",
+        "abstain"
+      ],
+      "title": "AnswerKind",
+      "type": "string"
+    },
+    "Check": {
+      "additionalProperties": false,
+      "properties": {
+        "by": {
+          "enum": [
+            "auto",
+            "llm",
+            "saad",
+            "chourouk"
+          ],
+          "title": "By",
+          "type": "string"
+        },
+        "check": {
+          "title": "Check",
+          "type": "string"
+        },
+        "passed": {
+          "title": "Passed",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "by",
+        "check",
+        "passed"
+      ],
+      "title": "Check",
+      "type": "object"
+    },
+    "EvidenceGroup": {
+      "additionalProperties": false,
+      "description": "One distinct piece of evidence the answer needs, with every place it can be found.",
+      "properties": {
+        "fact_value_id": {
+          "anyOf": [
+            {
+              "pattern": "^fv-[a-z0-9][a-z0-9-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Fact Value Id"
+        },
+        "span_ids": {
+          "items": {
+            "pattern": "^spn-[a-z0-9][a-z0-9-]*$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Span Ids",
+          "type": "array"
+        },
+        "required": {
+          "default": true,
+          "title": "Required",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "span_ids"
+      ],
+      "title": "EvidenceGroup",
+      "type": "object"
+    },
+    "Gold": {
+      "additionalProperties": false,
+      "properties": {
+        "groups": {
+          "items": {
+            "$ref": "#/$defs/EvidenceGroup"
+          },
+          "title": "Groups",
+          "type": "array"
+        },
+        "required_occurrences": {
+          "items": {
+            "pattern": "^occ-[a-z0-9][a-z0-9-]*$",
+            "type": "string"
+          },
+          "title": "Required Occurrences",
+          "type": "array"
+        },
+        "min_coverage": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 1,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Min Coverage"
+        }
+      },
+      "title": "Gold",
+      "type": "object"
+    },
+    "Modality": {
+      "description": "How the content of a version can be read; the stratification axis of RQ3 (C4).",
+      "enum": [
+        "text_document",
+        "slides",
+        "spreadsheet",
+        "scanned_document",
+        "chart_image",
+        "photo",
+        "screenshot",
+        "decorative_image"
+      ],
+      "title": "Modality",
+      "type": "string"
+    },
+    "QType": {
+      "enum": [
+        "fact_body",
+        "fact_attachment",
+        "fact_image",
+        "msg_to_attachment",
+        "attachment_to_msg",
+        "current_value",
+        "as_of_value",
+        "value_history",
+        "contested",
+        "authority_conflict",
+        "image_text_conflict",
+        "count_distinct",
+        "thread_summary",
+        "metadata",
+        "unanswerable"
+      ],
+      "title": "QType",
+      "type": "string"
+    },
+    "Scope": {
+      "enum": [
+        "current",
+        "as_of",
+        "history",
+        "none"
+      ],
+      "title": "Scope",
+      "type": "string"
+    },
+    "Strata": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_location": {
+          "enum": [
+            "body",
+            "attachment",
+            "image",
+            "header",
+            "mixed",
+            "none"
+          ],
+          "title": "Evidence Location",
+          "type": "string"
+        },
+        "role": {
+          "default": "none",
+          "enum": [
+            "appended",
+            "inline",
+            "mixed",
+            "none"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "modality": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Modality"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "version_state": {
+          "default": "none",
+          "enum": [
+            "single",
+            "current_of_n",
+            "historical_of_n",
+            "none"
+          ],
+          "title": "Version State",
+          "type": "string"
+        },
+        "n_versions": {
+          "default": 1,
+          "title": "N Versions",
+          "type": "integer"
+        },
+        "n_copies": {
+          "default": 0,
+          "title": "N Copies",
+          "type": "integer"
+        },
+        "direction": {
+          "default": "none",
+          "enum": [
+            "m2a",
+            "a2m",
+            "none"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "hops": {
+          "default": 1,
+          "title": "Hops",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "evidence_location"
+      ],
+      "title": "Strata",
+      "type": "object"
+    },
+    "Variant": {
+      "additionalProperties": false,
+      "properties": {
+        "style": {
+          "enum": [
+            "indirect",
+            "verbose",
+            "formal",
+            "keyword",
+            "colloquial"
+          ],
+          "title": "Style",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "style",
+        "text"
+      ],
+      "title": "Variant",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "pattern": "^q-[a-z0-9][a-z0-9-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "project_id": {
+      "pattern": "^prj-[a-z0-9][a-z0-9-]*$",
+      "title": "Project Id",
+      "type": "string"
+    },
+    "language": {
+      "enum": [
+        "de",
+        "en"
+      ],
+      "title": "Language",
+      "type": "string"
+    },
+    "type": {
+      "$ref": "#/$defs/QType"
+    },
+    "asked_at": {
+      "format": "date-time",
+      "title": "Asked At",
+      "type": "string"
+    },
+    "scope": {
+      "$ref": "#/$defs/Scope"
+    },
+    "as_of": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "As Of"
+    },
+    "asker": {
+      "anyOf": [
+        {
+          "pattern": "^per-[a-z0-9][a-z0-9-]*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Asker"
+    },
+    "text": {
+      "title": "Text",
+      "type": "string"
+    },
+    "variants": {
+      "items": {
+        "$ref": "#/$defs/Variant"
+      },
+      "title": "Variants",
+      "type": "array"
+    },
+    "answer": {
+      "$ref": "#/$defs/Answer"
+    },
+    "gold": {
+      "$ref": "#/$defs/Gold"
+    },
+    "strata": {
+      "$ref": "#/$defs/Strata"
+    },
+    "template": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Template"
+    },
+    "checks": {
+      "items": {
+        "$ref": "#/$defs/Check"
+      },
+      "title": "Checks",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "project_id",
+    "language",
+    "type",
+    "asked_at",
+    "scope",
+    "text",
+    "answer",
+    "gold",
+    "strata"
+  ],
+  "title": "Question",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mate.example/schema/questions.schema.json"
+}

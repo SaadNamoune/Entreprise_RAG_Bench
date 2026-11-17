@@ -1,0 +1,164 @@
+{
+  "$defs": {
+    "Retrieved": {
+      "additionalProperties": false,
+      "description": "One retrieved passage as a system under test returns it.",
+      "properties": {
+        "rank": {
+          "minimum": 1,
+          "title": "Rank",
+          "type": "integer"
+        },
+        "score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Score"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "rfc_message_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rfc Message Id"
+        },
+        "attachment_order": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Attachment Order"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page"
+        }
+      },
+      "required": [
+        "rank",
+        "text"
+      ],
+      "title": "Retrieved",
+      "type": "object"
+    },
+    "Usage": {
+      "additionalProperties": false,
+      "properties": {
+        "prompt_tokens": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prompt Tokens"
+        },
+        "completion_tokens": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Completion Tokens"
+        },
+        "latency_ms": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Latency Ms"
+        }
+      },
+      "title": "Usage",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "What a system returns for one question; the harness scores these.",
+  "properties": {
+    "question_id": {
+      "pattern": "^q-[a-z0-9][a-z0-9-]*$",
+      "title": "Question Id",
+      "type": "string"
+    },
+    "system": {
+      "title": "System",
+      "type": "string"
+    },
+    "arm": {
+      "title": "Arm",
+      "type": "string"
+    },
+    "retrieved": {
+      "items": {
+        "$ref": "#/$defs/Retrieved"
+      },
+      "title": "Retrieved",
+      "type": "array"
+    },
+    "answer_text": {
+      "default": "",
+      "title": "Answer Text",
+      "type": "string"
+    },
+    "cited_ranks": {
+      "items": {
+        "type": "integer"
+      },
+      "title": "Cited Ranks",
+      "type": "array"
+    },
+    "usage": {
+      "$ref": "#/$defs/Usage"
+    }
+  },
+  "required": [
+    "question_id",
+    "system",
+    "arm"
+  ],
+  "title": "RunRecord",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mate.example/schema/run_record.schema.json"
+}
